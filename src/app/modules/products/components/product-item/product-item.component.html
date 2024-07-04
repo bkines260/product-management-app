@@ -1,0 +1,23 @@
+<div class="product-card">
+  <div class="product-card__top">
+    <img [src]="product.thumbnail" alt="{{ product.title }}" class="product-card__image">
+    <div class="product-action">
+      <a class="product-action__link product-action__link--cart" matTooltip="Ajouter au panier" [matTooltipPosition]="'above'">
+        <mat-icon class="product-action__icon" aria-hidden="false" fontIcon="add"></mat-icon>
+      </a>
+      <a class="product-action__link product-action__link--quick-view" matTooltip="Détails" [matTooltipPosition]="'above'" (click)="openDialog()">
+        <mat-icon class="product-action__icon" aria-hidden="false" fontIcon="zoom_in"></mat-icon>
+      </a>
+      <a class="product-action__link product-action__link--wishlist" matTooltip="Ajouter au favoris" [matTooltipPosition]="'above'">
+        <mat-icon class="product-action__icon" aria-hidden="false" fontIcon="favorite_border"></mat-icon>
+      </a>
+      <a class="product-action__link product-action__link--compare" matTooltip="Comparer" [matTooltipPosition]="'above'">
+        <mat-icon class="product-action__icon" aria-hidden="false" fontIcon="compare_arrows"></mat-icon>
+      </a>
+    </div>
+  </div>
+  <div class="product-card__bottom">
+    <h2 class="product-card__title">{{ product.title }}</h2>
+    <p class="product-card__price">{{ product.price | currency }}</p>
+  </div>
+</div>

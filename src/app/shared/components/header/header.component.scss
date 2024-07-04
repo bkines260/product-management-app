@@ -1,0 +1,44 @@
+@import './../../../../assets/styles/extends';
+
+.menu-header {
+  border-bottom: 1px solid $secondary-color;
+  &__nav{
+    @include flex(flex, center,space-between);
+    gap:15px;
+  }
+  &__link {
+    @include fonts(13px,28px,$color-black);
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 21px 24px;
+    position: relative;
+    text-decoration: none;
+    display: block;
+    &::before{
+      content: "";
+      width: 0;
+      height: 1px;
+      background: $color-black;
+      position: absolute;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    &:hover{
+      color: $primary-color;
+      &::before{
+        width: 100%;
+        opacity: 1;
+      }
+    }
+    &.active{
+      color: $primary-color;
+    }
+  }
+  &__menu{
+    @include flex(flex, center,center);
+  }
+}

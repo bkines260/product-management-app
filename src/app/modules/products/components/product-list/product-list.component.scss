@@ -1,0 +1,33 @@
+@import './../../../../../assets/styles/extends';
+
+.product-list {
+  &__title {
+    @include fonts(20px,24px,$color-black);
+    font-family: "Montserrat", sans-serif;
+    text-align: start;
+    font-weight: 500;
+    margin: 32px 16px;
+  }
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  &__item {
+    flex: 1 1 calc(25% - 16px);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (max-width: 1200px) {
+      flex: 1 1 calc(33.33% - 16px);
+    }
+    @media (max-width: 768px) {
+      flex: 1 1 calc(50% - 16px);
+    }
+    @media (max-width: 480px) {
+      flex: 1 1 100%;
+    }
+  }
+}

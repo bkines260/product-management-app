@@ -1,0 +1,27 @@
+<mat-dialog-content class="quik-content">
+  <div class="quik-content__modal">
+    <img [src]="data.product.thumbnail" alt="{{ data.product.title }}" class="quik-content__image">
+    <div class="quik-content__description">
+      <h3 class="quik-content__title">{{ data.product.title }}</h3>
+      <p class="quik-content__text">{{data.product.description}}</p>
+      <p class="quik-content__text">Catégorie: {{data.product.category}}</p>
+      <p class="quik-content__text">Marque: {{data.product.brand}}</p>
+      <p class="quik-content__text">rating: {{data.product.rating}}</p>
+      <mat-dialog-actions class="quik-content__actions" align="start">
+        <div class="quik-content__input-group">
+          <button class="btn-icon" (click)="decrement()">
+            <mat-icon class="btn-icon__icon" aria-hidden="false" fontIcon="remove"></mat-icon>
+          </button>
+          <input class="quik-content__input" matInput type="number" [(ngModel)]="value">
+          <button class="btn-icon" (click)="increment()">
+            <mat-icon class="btn-icon__icon" aria-hidden="false" fontIcon="add"></mat-icon>
+          </button>
+        </div>
+        <button  class="quik-content__button btn-primary">Ajouter au panier</button>
+        <button  class="quik-content__button btn-icon" matTooltip="Ajouter au favoris" [matTooltipPosition]="'above'">
+          <mat-icon aria-hidden="false" fontIcon="favorite_border" class="btn-icon__icon"></mat-icon>
+        </button>
+      </mat-dialog-actions>
+    </div>
+  </div>
+</mat-dialog-content>

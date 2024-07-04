@@ -1,0 +1,51 @@
+@import './../../../../../assets/styles/extends';
+
+.quik-content{
+  background-color: $color-white;
+  border-radius: 0;
+  &__modal{
+    @include flex;
+    gap: 20px
+  }
+  &__description{
+    @include flex(flex, flex-start, flex-start);
+    flex-direction: column;
+  }
+  &__text{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    @include fonts(13px,28px,$color-black);
+    padding: 0 8px;
+  }
+  &__title{
+    font-family: "Montserrat", sans-serif;
+    @include fonts(16px,28px,$color-black);
+    padding: 0 8px;
+  }
+  &__button{
+    margin-right: 5px;
+    border-radius: 0;
+  }
+  &__input{
+    height: 37px;
+    color: $color-black;
+    font-family: "Montserrat", sans-serif;
+    @include fonts(13px,40px,$color-black);
+    border-radius: 0;
+    outline: none;
+    border: 1px solid #ebeeee;
+    border-left: 0;
+    border-right: 0;
+    width: 45px;
+    text-align: center;
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  &__input-group{
+    @include flex;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,117 @@
+@import "./../../../../../assets/styles/extends";
+
+.product-card {
+  overflow: hidden;
+  &__top {
+    border: 1px solid #ebeeee;
+    position: relative;
+    .product-action {
+      position: absolute;
+      bottom: 30px;
+      top: auto;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      transform: translateX(-50%);
+      &__link{
+        position: static;
+        margin-right: 6px;
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease 0s;
+        border: 1px solid #ebeeee;
+        @include dimensions(40px, 40px);
+        @include flex ;
+        &--cart {
+          transition: all .2s ease-in-out;
+          color: #fff;
+          background: #2c2c2c;
+          border-color: #2c2c2c;
+        }
+        &--compare {
+          transform: translateY(-60px);
+          transition: all 0.9s ease 0s;
+          background: #fff;
+          color: #2c2c2c;
+          &:hover{
+            color: #fff;
+            background: #2c2c2c;
+            border-color: #2c2c2c;
+          }
+        }
+        &--wishlist {
+          transform: translateY(-60px);
+          transition: all 0.6s ease 0s;
+          background: #fff;
+          color: #2c2c2c;
+          &:hover{
+            color: #fff;
+            background: #2c2c2c;
+            border-color: #2c2c2c;
+          }
+        }
+        &--quick-view {
+          transform: translateY(-60px);
+          transition: all 0.3s ease 0s;
+          background: #fff;
+          color: #2c2c2c;
+          &:hover{
+            color: #fff;
+            background: #2c2c2c;
+            border-color: #2c2c2c;
+          }
+        }
+      }
+      &__icon{
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    transition: all 0.6s ease;
+    object-fit: contain;
+    object-position: center;
+  }
+  &:hover {
+    cursor: pointer;
+    .product-card__image {
+      transform: scale(1.1);
+    }
+    .product-action {
+      &__link{
+        opacity: 1;
+        visibility: visible;
+        &--compare {
+          transform: translateY(0);
+        }
+        &--wishlist {
+          transform: translateY(0);
+        }
+        &--quick-view {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include fonts(15px, 24px, #707070);
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &__price {
+    @include fonts(18px, 24px, $color-black);
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    font-family: "Montserrat", sans-serif;
+    margin: 0 0 15px 0;
+  }
+}

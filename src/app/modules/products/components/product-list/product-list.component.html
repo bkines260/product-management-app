@@ -1,0 +1,9 @@
+<section class="product-list container-fluid">
+  <h1 class="product-list__title">Product List</h1>
+  <div class="product-list__grid">
+    <div *ngFor="let product of products$ | async" class="product-list__item">
+      <app-product-item [product]="product"></app-product-item>
+    </div>
+  </div>
+</section>
+<button *ngIf="canLoadMore$ | async"  (click)="loadMore()">Load More</button>
