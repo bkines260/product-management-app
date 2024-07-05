@@ -1,0 +1,40 @@
+@import './../../../../../assets/styles/extends';
+.cart-item {
+  width: 100%;
+  border-bottom: 1px solid $color-offwhite;
+  @include flex(flex, center, space-between);
+  padding: 25px 0;
+  &__image{
+    width: 60px;
+    border: 1px solid $color-offwhite;
+  }
+  &__title{
+    font-size: 14px;
+    color: $color-black;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+  }
+  &__column{
+    font-size: 14px;
+    color: $color-black;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    &--product{
+      @include flex(flex, center, start);
+      gap: 20px;
+      width: 300px;
+    }
+    &--quantity{
+      width: 250px;
+    }
+    &--price{
+      width: 250px;
+    }
+  }
+}

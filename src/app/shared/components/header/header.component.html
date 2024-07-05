@@ -4,8 +4,16 @@
       <a class="menu-header__link" routerLinkActive="active">ACCUEIL</a>
       <a class="menu-header__link" routerLinkActive="active"  [routerLink]="'/products'">PRODUITS</a>
       <a class="menu-header__link" routerLinkActive="active" >WISHLIST</a>
-      <a class="menu-header__link" routerLinkActive="active" >PANIER</a>
+      <a class="menu-header__link" routerLinkActive="active" [routerLink]="'/cart'">
+        PANIER
+      </a>
     </div>
-    <button class="btn-primary">Ajouter un produit</button>
+    <div class="menu-header__buttons">
+      <button class="btn-icon" (click)="goTo('/cart')">
+        <mat-icon>shopping_cart</mat-icon>
+        <span *ngIf="totalCart" class="badge">{{totalCart}}</span>
+      </button>
+      <button class="btn-primary">Ajouter un produit</button>
+    </div>
   </nav>
 </header>

@@ -1,0 +1,19 @@
+<div class="cart container-fluid">
+  <h2 class="cart__title">Shopping Cart</h2>
+  <div *ngIf="(cartItems$ | async)?.length" class="cart__header">
+    <div>PRODUCT DETAILS</div>
+    <div>UNIT PRICE</div>
+    <div>UNIT PRICE</div>
+    <div>QUANTITY</div>
+    <div>AMOUNT</div>
+  </div>
+  <div *ngFor="let item of cartItems$ | async" class="cart__items">
+    <app-cart-item [cartItem]="item" (removeItem)="removeItem(item.product.id)"></app-cart-item>
+  </div>
+  <div *ngIf="(cartItems$ | async)?.length" class="cart__footer">
+    <button (click)="clearCart()" class="clear-btn">Vider le panier</button>
+  </div>
+  <div class="empty-content" *ngIf="!(cartItems$ | async)?.length">
+    Panier vide
+  </div>
+</div>

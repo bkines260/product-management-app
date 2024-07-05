@@ -6,6 +6,7 @@ import { AppState } from '../../../../store/app.state';
 import { loadProducts } from '../../store/products.actions';
 import { selectAllProducts } from '../../store/products.selector';
 import { MatDialog } from '@angular/material/dialog';
+import { addToCart } from '../../../cart/store/cart.actions';
 
 
 @Component({

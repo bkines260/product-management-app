@@ -27,13 +27,12 @@
     border-radius: 0;
   }
   &__input{
-    height: 37px;
-    color: $color-black;
+    height: 36px;
     font-family: "Montserrat", sans-serif;
     @include fonts(13px,40px,$color-black);
     border-radius: 0;
     outline: none;
-    border: 1px solid #ebeeee;
+    border: 1px solid $color-offwhite;
     border-left: 0;
     border-right: 0;
     width: 45px;

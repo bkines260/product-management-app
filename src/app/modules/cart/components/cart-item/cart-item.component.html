@@ -1,0 +1,18 @@
+<div class="cart-item">
+  <div class="cart-item__column cart-item__column--product">
+    <img [src]="cartItem.product.thumbnail" alt="{{ cartItem.product.title }}" class="cart-item__image">
+    <h2 class="cart-item__title">{{ cartItem.product.title }}</h2>
+  </div>
+  <div class="cart-item__column cart-item__column--price">
+    <p class="cart-item--price">{{ cartItem.product.price | currency }}</p>
+  </div>
+  <div class="cart-item__column cart-item__column--quantity">
+    quantity : {{cartItem.quantity}}
+  </div>
+  <div class="cart-item__column cart-item__column--price">
+    totalPrice : {{cartItem.quantity * cartItem.product.price }}
+  </div>
+  <button class="btn-icon" (click)="removeItem.emit()">
+    <mat-icon class="btn-icon__icon">close</mat-icon>
+  </button>
+</div>

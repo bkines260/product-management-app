@@ -2,7 +2,7 @@
   <div class="product-card__top">
     <img [src]="product.thumbnail" alt="{{ product.title }}" class="product-card__image">
     <div class="product-action">
-      <a class="product-action__link product-action__link--cart" matTooltip="Ajouter au panier" [matTooltipPosition]="'above'">
+      <a class="product-action__link product-action__link--cart" (click)="addToCart(product)" matTooltip="Ajouter au panier" [matTooltipPosition]="'above'">
         <mat-icon class="product-action__icon" aria-hidden="false" fontIcon="add"></mat-icon>
       </a>
       <a class="product-action__link product-action__link--quick-view" matTooltip="Détails" [matTooltipPosition]="'above'" (click)="openDialog()">

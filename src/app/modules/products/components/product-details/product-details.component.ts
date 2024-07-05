@@ -1,5 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Product } from '../../../../core/models/product.model';
+import { addToCart } from '../../../cart/store/cart.actions';
+import { AppState } from '../../../../store/app.state';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-product-details',
@@ -10,7 +14,8 @@ export class ProductDetailsComponent {
   value: number = 1;
   constructor(
     public dialogRef: MatDialogRef<any>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private store: Store<AppState>
   ) {}
 
   increment() {
@@ -21,6 +26,10 @@ export class ProductDetailsComponent {
     if (this.value > 1) {
       this.value--;
     }
+  }
+  addToCart(): void {
+    this.store.dispatch(addToCart({ product: this.data.product, quantity: this.value}));
+    this.dialogRef.close();
   }
 
 }

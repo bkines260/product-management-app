@@ -3,7 +3,7 @@
 .product-card {
   overflow: hidden;
   &__top {
-    border: 1px solid #ebeeee;
+    border: 1px solid $color-offwhite;
     position: relative;
     .product-action {
       position: absolute;
@@ -22,46 +22,46 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease 0s;
-        border: 1px solid #ebeeee;
+        border: 1px solid $color-offwhite;
         @include dimensions(40px, 40px);
         @include flex ;
         &--cart {
           transition: all .2s ease-in-out;
-          color: #fff;
-          background: #2c2c2c;
-          border-color: #2c2c2c;
+          color: $color-white;
+          background: $color-black;
+          border-color: $color-black;
         }
         &--compare {
           transform: translateY(-60px);
           transition: all 0.9s ease 0s;
-          background: #fff;
-          color: #2c2c2c;
+          background: $color-white;
+          color: $color-black;
           &:hover{
-            color: #fff;
-            background: #2c2c2c;
-            border-color: #2c2c2c;
+            color: $color-white;
+            background: $color-black;
+            border-color: $color-black;
           }
         }
         &--wishlist {
           transform: translateY(-60px);
           transition: all 0.6s ease 0s;
-          background: #fff;
-          color: #2c2c2c;
+          background: $color-white;
+          color: $color-black;
           &:hover{
-            color: #fff;
-            background: #2c2c2c;
-            border-color: #2c2c2c;
+            color: $color-white;
+            background: $color-black;
+            border-color: $color-black;
           }
         }
         &--quick-view {
           transform: translateY(-60px);
           transition: all 0.3s ease 0s;
-          background: #fff;
-          color: #2c2c2c;
+          background: $color-white;
+          color: $color-black;
           &:hover{
-            color: #fff;
-            background: #2c2c2c;
-            border-color: #2c2c2c;
+            color: $color-white;
+            background: $color-black;
+            border-color: $color-black;
           }
         }
       }
@@ -101,7 +101,7 @@
   }
 
   &__title {
-    @include fonts(15px, 24px, #707070);
+    @include fonts(15px, 24px, $color-gray);
     font-weight: normal;
     letter-spacing: 0.01em;
     font-family: "Montserrat", sans-serif;
