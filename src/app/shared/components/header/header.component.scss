@@ -1,6 +1,7 @@
 @import './../../../../assets/styles/extends';
 
 .menu-header {
+  padding: 0 16px;
   border-bottom: 1px solid $secondary-color;
   &__nav{
     @include flex(flex, center,space-between);
@@ -62,5 +63,35 @@
       text-align: center;
 
     }
+  }
+}
+::ng-deep{
+  .mobile-menu{
+      .mat-mdc-menu-content{
+        background: $color-white;
+      }
+    }
+  }
+@media(min-width:671px){
+  .mobile-menu{
+    display: none;
+  }
+  .mobile-btn{
+    display: none;
+  }
+}
+@media(max-width:670px){
+  .desktop-menu{
+    display: none;
+  }
+  .desktop-btn{
+    display: none;
+  }
+  .menu-header__buttons{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .menu-header__link{
+    margin: 0;
   }
 }

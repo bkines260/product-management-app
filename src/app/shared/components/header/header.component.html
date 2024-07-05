@@ -1,6 +1,6 @@
 <header class="menu-header">
   <nav class="menu-header__nav container-fluid">
-    <div class="menu-header__menu">
+    <div class="menu-header__menu desktop-menu">
       <a class="menu-header__link" routerLinkActive="active"  [routerLink]="'/products'">PRODUITS</a>
       <a class="menu-header__link" routerLinkActive="active" [routerLink]="'/cart'">
         PANIER
@@ -11,7 +11,25 @@
         <mat-icon>shopping_cart</mat-icon>
         <span *ngIf="totalCart" class="badge">{{totalCart}}</span>
       </button>
-      <button class="btn-primary">Ajouter un produit</button>
+      <button class="btn-primary desktop-btn">Ajouter un produit</button>
+      <button class="mobile-btn" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu class="mobile-menu" #menu="matMenu">
+        <button mat-menu-item>
+          <a class="menu-header__link" routerLinkActive="active"  [routerLink]="'/products'">PRODUITS</a>
+        </button>
+        <button mat-menu-item>
+          <a class="menu-header__link" routerLinkActive="active" [routerLink]="'/cart'">
+            PANIER
+          </a>
+        </button>
+        <button mat-menu-item>
+          <a class="menu-header__link">
+            AJOUTER UN PRODUIT
+          </a>
+        </button>
+      </mat-menu>
     </div>
   </nav>
 </header>
